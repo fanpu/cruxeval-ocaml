@@ -59,14 +59,15 @@ Your translation should be in the following format, ending in a test case where 
 Do NOT include additional test cases or extra testing code, and adhere strictly to the format below.
 
 <ocaml_code>
-(* YOUR CODE *)
+let f = (* YOUR CODE *)
+
 let () =
   let result = f INPUT in
   let expected_output = EXPECTED_OUTPUT
   assert (result = expected_output);
-<ocaml_code>
+</ocaml_code>
 
-Please provide the complete OCaml code, including both the translated function and the test case, in your response. Write your entire response inside <ocaml_code> tags.
+Please provide the complete OCaml code, including both the translated function and the test case, in your response. Write your entire response inside <ocaml_code>...</ocaml_code> tags.
 """
 
 def parse_translation_result(result):
