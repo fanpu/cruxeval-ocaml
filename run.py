@@ -5,6 +5,7 @@ import json
 import os
 import argparse
 from concurrent.futures import ProcessPoolExecutor
+from typing import List
 
 def sandbox_code(code):
     # Approach similar to https://ctftime.org/writeup/28166
@@ -123,7 +124,7 @@ def run_ocaml(code_snippet, dir, cache_name="ocaml_cache"):
         return output, error
 
 
-def parallel_run_ocaml(queries, dir, max_workers=None) -> tuple[bool, str]:
+def parallel_run_ocaml(queries, dir, max_workers=None) -> List[tuple[bool, str]]:
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         futures = [executor.submit(run_ocaml, query, dir) for query in queries]
         results = [future.result() for future in futures]
