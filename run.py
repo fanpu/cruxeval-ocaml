@@ -7,9 +7,8 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor
 
 def sandbox_code(code):
-    # Approach inspired by https://ctftime.org/writeup/28166
+    # Approach similar to https://ctftime.org/writeup/28166
     return f"""
-
 module Overwritten = struct
     module Blocked = struct end
     let blocked = `Blocked_for_sandboxing
